@@ -1,0 +1,23 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.overlay {
+    transition: opacity 0.35s ease-in-out;
+}
+
+.animeImg {
+    transition: transform 0.35s ease-in-out;
+}
+
+.singleAnimeDiv:hover .animeImg {
+    transform: scale(1.02);
+}
+
+.singleAnimeDiv:hover .overlay {
+    opacity: 0.9;
+}
+
+.singleAnimeDiv:hover .animeInfo {
+    opacity: 1;
+}

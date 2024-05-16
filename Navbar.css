@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100&display=swap');
+
+nav {
+    z-index: 1;
+}
+
+.title {
+    font-family: 'MuseoModerno', cursive;
+}
+
+#hamburger {
+    transition: margin-left 0.4s ease-in-out;
+}
+
+.activeNavTab {
+    background-color: white;
+    color: black;
+}
