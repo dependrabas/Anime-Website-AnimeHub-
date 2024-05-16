@@ -1,15 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { Provider } from 'react-redux';
-import store from './store/index';
-import { BrowserRouter } from "react-router-dom";
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </BrowserRouter>
-);
+const animeSlice = createSlice({
+    name: "Anime Slice",
+    initialState: { filter: "upcoming", searchQuery: "" },
+    reducers: {
+        setFilter(state, action) {
+            state.filter = action.payload;
+        },
+        setSearchQuery(state, action) {
+            state.searchQuery = action.payload;
+        }
+    }
+})
+
+export const animeActions = animeSlice.actions;
+
+const store = configureStore({
+    reducer: {
+        anime: animeSlice.reducer
+    }
+})
+
+export default store;
